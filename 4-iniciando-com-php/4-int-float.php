@@ -5,10 +5,11 @@ var_dump(-2);
 
 // sistema octal (cuidado):
 //Prefixado com '0'
-echo 0777; // vai printar 511 (tipo int)
+echo 0777; // vai printar 511
+var_dump(0777); # vai printar 511 (tipo int)
 
 echo 777; // 777
-var_dump(777); // 777
+var_dump(777); // 777 (tipo int)
 
 //Sistema Hexadecimal:
 //Prefixado com '0x'
@@ -26,15 +27,18 @@ echo 1.0;
 var_dump(1.0);
 
 // Usando gettype:
-echo gettype(10); echo '<br>';
-echo gettype(10.97); echo '<br>';
-echo gettype(null); echo '<br>';
-echo gettype(false); echo '<br>';
-echo gettype([]); echo '<br>';
+echo gettype(10); echo '<br>'; // integer
+echo gettype(10.97); echo '<br>'; // double
+echo gettype(null); echo '<br>'; // NULL
+echo gettype(false); echo '<br>'; //boolean
+echo gettype([]); echo '<br>'; // array
+
+$objeto = new stdClass();
+echo gettype($objeto); echo '<br>';// object
 
 // Constantes do PHP para saber o tamanho máximo e mínimo suportado pelo PHP dos tipos int e float, usando:
 /*
-  Os tamanhos mínimos e máximos irão variar dependendo da arquitetura do Sistema Operacional da máquina que o PHP está rodando
+  Os tamanhos mínimos e máximos irão variar dependendo da arquitetura do Sistema Operacional da máquina que o PHP está rodando (32 bits ou 64 bits)
 */
 echo PHP_INT_MIN; echo '<br>';
 echo PHP_INT_MAX; echo '<br>';
